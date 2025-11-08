@@ -17,8 +17,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-GlobalData="*res://global_data.gd"
-ProductDetails="*res://product_details.gd"
+GlobalData="*res://Scripts/GlobalData.cs"
+ProductDetails="*res://Scripts/ProductDetails.cs"
 EOSGRuntime="*res://addons/epic-online-services-godot/runtime.gd"
 
 [display]

@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://wcdhuf308jj6"]
 
 [ext_resource type="Texture2D" uid="uid://cwybnn2ajy5dk" path="res://sprites/player.png" id="1_1umq1"]
-[ext_resource type="Script" path="res://player/player.gd" id="1_h4f5j"]
+[ext_resource type="Script" path="res://Scripts/PlayerCharacter.cs" id="1_h4f5j"]
 [ext_resource type="Texture2D" uid="uid://d13ypkln3lxqj" path="res://sprites/gun.png" id="2_67th0"]
-[ext_resource type="Script" path="res://player/weapon.gd" id="2_jh30v"]
+[ext_resource type="Script" path="res://Scripts/Weapon.cs" id="2_jh30v"]
 [ext_resource type="PackedScene" uid="uid://bv50bxk6xbfby" path="res://player/Bullet.tscn" id="3_v1g6m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m7iti"]
