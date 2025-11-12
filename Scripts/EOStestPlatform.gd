@@ -31,7 +31,7 @@ func _ready() -> void:
 	EOS.Platform.PlatformInterface.create(create_opts);
 	
 	var device_id_options = EOS.Connect.CreateDeviceIdOptions.new()
-	device_id_options.device_model = "NIGGER PHONE"
+	device_id_options.device_model = "WZIM PHONE"
 	EOS.Connect.ConnectInterface.create_device_id(device_id_options)
 	
 	var login_options = EOS.Connect.LoginOptions.new()
@@ -41,7 +41,7 @@ func _ready() -> void:
 	credentials.type = EOS.ExternalCredentialType.DeviceidAccessToken
 	credentials.token = null
 	
-	user_login_info.display_name = "player_nigerion"
+	user_login_info.display_name = "wzimniac_player"
 	
 	login_options.credentials = credentials
 	login_options.user_login_info = user_login_info
@@ -80,7 +80,7 @@ func _on_create_lobby_3_pressed() -> void:
 	#var local_product_user_id = get_node("/root/EOSManager").localProductUserIdString
 	var local_product_user_id = EOSGRuntime.local_product_user_id
 	var current_lobby_id = get_node("/root/EOSManager").currentLobbyId
-	print(current_lobby_id + "NIGGER1")
+	print(current_lobby_id + "WZIM")
 	lobby_search.set_parameter("bucket", "DefaultBucket", EOS.ComparisonOp.Equal)
 	
 	#lobby_search.set_lobby_id(current_lobby_id)
@@ -89,17 +89,17 @@ func _on_create_lobby_3_pressed() -> void:
 	#lobby_search.set_target_user_id(abc)
 	#print(local_product_user_id)
 	var count: int = lobby_search.get_search_result_count()
-	print(str(count) + "NIGGERSprzedprzed")
+	print(str(count) + "WZIMIACprzedprzed")
 	
 	lobby_search.find(local_product_user_id)
 	
 	count = lobby_search.get_search_result_count()
-	print(str(count) + "NIGGERSprzed")
+	print(str(count) + "WZIMNIACprzed")
 	
 	#var search_ret = await IEOS.lobby_search_find_callback
 	await IEOS.lobby_search_find_callback
 	
 	count = lobby_search.get_search_result_count()
 	#print(lobby_search_result.lobby_search)
-	print(str(count) + "NIGGERSpo")
+	print(str(count) + "WZIMNIACpo")
 	# Replace with function body.
