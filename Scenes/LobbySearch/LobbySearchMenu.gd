@@ -12,5 +12,3 @@ func _on_back_button_pressed() -> void:
 		print("🚪 Leaving lobby before returning to menu...")
 		eos_manager.LeaveLobby()
 	get_tree().change_scene_to_file("res://Scenes/MainMenu/main.tscn")
-
-

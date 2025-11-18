@@ -86,20 +86,29 @@ public partial class LobbyListUI : VBoxContainer
 	
 	private void OnLobbyLeft()
 	{
-		// Pokaż UI nicku gdy opuściliśmy lobby (sprawdź czy nie disposed)
+		// Safety: Sprawdź czy LobbyListUI jeszcze istnieje (nie został disposed)
+		if (!IsInstanceValid(this))
+		{
+			GD.Print("⚠️ LobbyListUI already disposed, skipping OnLobbyLeft");
+			return;
+		}
+		
+		GD.Print("📢 LobbyListUI received LobbyLeft signal");
+		
+		// Po wyjściu z lobby, pokaż nickname UI! OwO
 		if (nicknameContainer != null && IsInstanceValid(nicknameContainer))
 		{
 			nicknameContainer.Visible = true;
 			GD.Print("✨ Nickname UI shown after leaving lobby! >w<");
 		}
-		else
+		else if (IsInstanceValid(this))
 		{
-			// Safety: Jeśli nickname UI zostało usunięte, stwórz je ponownie! OwO
+			// Safety: Jeśli nickname UI zostało usunięte ALE scene nadal istnieje, stwórz je ponownie! OwO
 			GD.Print("⚠️ Nickname UI missing, recreating...");
 			CreateNicknameUI();
 		}
 	}
-
+	
 	private void OnLobbyListUpdated(Godot.Collections.Array<Godot.Collections.Dictionary> lobbies)
 	{
 		GD.Print($"Updating lobby list UI with {lobbies.Count} lobbies");
