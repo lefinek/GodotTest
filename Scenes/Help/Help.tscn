@@ -24,6 +24,7 @@ grow_vertical = 2
 color = Color(0.105882354, 0.105882354, 0.105882354, 1)
 
 [node name="HelpCenter" type="CenterContainer" parent="HelpPanel"]
+custom_minimum_size = Vector2(600, 500)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -41,22 +42,36 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 1, 0.8, 1)
 theme_override_fonts/font = ExtResource("2_joa0n")
 theme_override_font_sizes/font_size = 20
-text = "Zasady gry"
+text = "Zasady Gry"
 horizontal_alignment = 1
 
-[node name="RulesPanel" type="Panel" parent="HelpPanel/HelpCenter/VHelp"]
-custom_minimum_size = Vector2(500, 400)
+[node name="RulesPanel" type="ScrollContainer" parent="HelpPanel/HelpCenter/VHelp"]
+custom_minimum_size = Vector2(600, 500)
 layout_mode = 2
+size_flags_vertical = 3
 
 [node name="GameRules" type="RichTextLabel" parent="HelpPanel/HelpCenter/VHelp/RulesPanel"]
-clip_contents = false
-layout_mode = 0
-offset_right = 287.0
-offset_bottom = 162.0
-text = "1. Znajdź lobby lub stwórz własne.
-2. Zaproś znajomych używając kodu pokoju.
-3. Rozpocznij grę, gdy wszyscy będą gotowi.
-4. ..."
+custom_minimum_size = Vector2(600, 200)
+layout_mode = 2
+size_flags_vertical = 3
+text = "CEL MISJI Waszym zadaniem jest zidentyfikowanie wszystkich Agentów Waszej drużyny (Czerwonej lub Niebieskiej), którzy ukrywają się pod kryptonimami na planszy. Wygrywa zespół, który skontaktuje się ze wszystkimi swoimi agentami jako pierwszy.
+
+MISTRZ GRY (SZEF WYWIADU) Nad przebiegiem operacji czuwa Mistrz Gry. Tylko on posiada klucz do szyfru i wie, pod którym słowem kryje się agent, cywil, a pod którym czyha Zabójca. Jego zadaniem jest naprowadzenie Was na właściwe tropy.
+
+PRZEBIEG TURY
+Szyfr: Mistrz Gry przekazuje Wam wskazówkę składającą się z jednego słowa i jednej liczby (np. \"Zwierzę 3\").
+- Słowo łączy znaczeniowo karty Waszej drużyny.
+- Liczba informuje, ile kart pasuje do tego skojarzenia.
+
+Operacja: Jako Agenci naradzacie się i wskazujecie karty na planszy, które Waszym zdaniem pasują do otrzymanego hasła.
+
+WYNIKI WERYFIKACJI
+- Wasz Agent: Sukces! Karta zostaje odkryta, a Wy możecie kontynuować turę.
+- Niewinny Cywil (Neutralny): Pudło. Trafiliście na przypadkową osobę. Wasza tura dobiega końca.
+- Agent Wroga: Błąd! Odkrywacie agenta przeciwników, przybliżając ich do zwycięstwa. Wasza tura kończy się natychmiast.
+- Zabójca: KRYTYCZNA PORAŻKA! Odkrycie tej karty oznacza natychmiastowe przegranie całej gry.
+
+ZASADY ZGADYWANIA Możecie wskazać maksymalnie tyle kart, ile wynosi liczba w podpowiedzi plus jeden dodatkowy strzał. Jeśli nie jesteście pewni kolejnego ruchu, możecie w dowolnym momencie przerwać zgadywanie, aby nie ryzykować trafienia Zabójcy."
 
 [node name="CornerAnchor" type="Control" parent="."]
 anchors_preset = 0
